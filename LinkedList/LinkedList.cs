@@ -86,6 +86,13 @@ namespace LinkedList
                 temp = temp.next; //temp=null
             }
         }
+        internal Node RemoveFirstNode()
+        {
+            if (this.head == null)
+                return null;
+            this.head = this.head.next;
+            return this.head;
+        }
 
         static void Main(string[] args)
         {
@@ -99,7 +106,9 @@ namespace LinkedList
             list.AddAtFirst(56);
             list.InsertAtParticularPosition(2, 20);
             list.Display();
-
+            list.RemoveFirstNode();
+            Console.WriteLine();
+            list.Display();
 
 
         }
