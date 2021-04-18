@@ -108,6 +108,22 @@ namespace LinkedList
             return head;
         }
 
+        public int Search(int value)
+        {
+            Node temp = head;
+            int count = 0;
+            while (temp != null)
+            {
+                count++;
+                if (temp.data == value)
+                {
+                    Console.Write("Value found at index:  " + count);
+                    return value;
+                }
+                temp = temp.next;
+            }
+            return 0;
+        }
 
         static void Main(string[] args)
         {
@@ -127,6 +143,8 @@ namespace LinkedList
             list.RemoveLastNode();
             Console.WriteLine();
             list.Display();
+            int value = list.Search(30);
+            Console.WriteLine(" value =  " + value);
 
 
         }
